@@ -10,43 +10,43 @@ private:
     int num;
 
 public:
-    Counter();
+    
     Counter(int num_);
     
 
-    int Увеличить();
-    int Уменьшить();
-    int Установить1();
-    int Установить();
-    int Вывести();
+    int increase();
+    int decreace();
+    int set1();
+    int set();
+    int show();
 };
 
-int Counter::Увеличить()
+int Counter::increase()
 {
     num = ++num;
     return num;
 }
 
-int Counter::Уменьшить()
+int Counter::decreace()
 {
     num = --num;
     return num;
 }
-int Counter::Установить1()
+int Counter::set1()
 {
     num = 1;
     return num;
 }
-int Counter::Установить()
+int Counter::set()
 {
     int t;
     cin >> t;
     num = t;
     return num;
 }
-int Counter::Вывести()
+int Counter::show()
 {
-    cout << num << endl;
+    std::cout << num << endl;
     return num;
 }
 
@@ -55,7 +55,7 @@ Counter::Counter(int num_)
 {
     num = num_;
 }
-Counter::Counter(){}
+
 
 
 int main()
@@ -66,34 +66,33 @@ int main()
 
     string YN;
     string c;
-
+    int t=0;
    
 
-    cout << "Вы хотите указать начальное значение счетчика? Введите да или нет: ";
+    std::cout << "Вы хотите указать начальное значение счетчика? Введите да или нет: ";
     cin >> YN;
     if (YN == "да")
     {
-        cout << "\nВведите начальное положение счетчика: ";
-        Counter S;
-        S.Установить();//установил
-
+        std::cout << "\nВведите начальное положение счетчика: ";
+        cin >> t;
+        Counter S(t);
 
        while (c != "x")
        {
-           cout << "Введите команду ( '+' '-' '=' или 'x'): ";
+           std::cout << "Введите команду ( '+' '-' '=' или 'x'): ";
            cin >> c;
 
            if (c == "+")
            {
-               S.Увеличить();
+               S.increase();
            }
            if (c == "-")
            {
-               S.Уменьшить();
+               S.decreace();
            }
            if (c == "=")
            {
-               S.Вывести();
+               S.show();
            }   
        }
 
@@ -102,28 +101,28 @@ int main()
     if (YN == "нет")
     {
         Counter S(1);
-        cout << "\nНачальное положение счетчика установлено на 1\n";
+        std::cout << "\nНачальное положение счетчика установлено на 1\n";
 
         while (c != "x")
         {
-            cout << "Введите команду ( '+' '-' '=' или 'x'): ";
+            std::cout << "Введите команду ( '+' '-' '=' или 'x'): ";
             cin >> c;
 
             if (c == "+")
             {
-                S.Увеличить();
+                S.increase();
             }
             if (c == "-")
             {
-                S.Уменьшить();
+                S.decreace();
             }
             if (c == "=")
             {
-                S.Вывести();
+                S.show();
             }
         }
     }
 
-    cout << "До свидания!";
+    std::cout << "До свидания!";
 
 }
