@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <locale.h>
 #include <windows.h>
 #include <string>
@@ -23,27 +23,16 @@ public:
 
 int Counter::increase()
 {
-    num = ++num;
+    ++num;
     return num;
 }
 
 int Counter::decreace()
 {
-    num = --num;
+    --num;
     return num;
 }
-int Counter::set1()
-{
-    num = 1;
-    return num;
-}
-int Counter::set()
-{
-    int t;
-    cin >> t;
-    num = t;
-    return num;
-}
+
 int Counter::show()
 {
     std::cout << num << endl;
